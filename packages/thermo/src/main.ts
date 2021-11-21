@@ -8,10 +8,14 @@ client.on('connect', () => {
 
 	startFakeEvents((event) => {
 		console.log('[THERMO]: publishing event:');
-		console.group();
-		console.log({ event });
-		console.groupEnd();
+		withLogGroup(() => console.log({ event }));
 
 		client.publish('devices/thermo', JSON.stringify(event));
 	});
 });
+
+function withLogGroup(f: () => void): void {
+	console.group();
+	f();
+	console.groupEnd();
+}

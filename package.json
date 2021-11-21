@@ -12,17 +12,23 @@
     "thermo": "yarn workspace @homeauto/thermo",
     "heater": "yarn workspace @homeauto/heater",
     "lib": "yarn workspace @homeauto/lib",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@guardian/eslint-config-typescript": "^0.7.0",
     "@guardian/prettier": "^0.7.0",
     "@types/node": "^16.11.7",
     "eslint": "^7.0.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "nodemon": "^2.0.15",
     "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
   }
 }
