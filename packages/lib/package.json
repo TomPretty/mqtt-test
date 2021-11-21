@@ -1,0 +1,16 @@
+{
+  "name": "@homeauto/lib",
+  "version": "1.0.0",
+  "description": "A shared lib",
+  "author": "Tom Pretty",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "watch": "tsc --build --watch"
+  },
+  "dependencies": {
+    "zod": "^3.11.6"
+  }
+}

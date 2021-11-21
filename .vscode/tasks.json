@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "watch",
+      "path": "packages/thermo/",
+      "group": "build",
+      "problemMatcher": ["$tsc-watch"],
+      "label": "npm: watch - packages/thermo",
+      "detail": "tsc --watch",
+      "isBackground": true
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "path": "packages/heater/",
+      "group": "build",
+      "problemMatcher": ["$tsc-watch"],
+      "label": "npm: watch - packages/heater",
+      "detail": "tsc --watch",
+      "isBackground": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+version: "3"
+services:
+  thermo:
+    container_name: thermo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - BUILD_CONTEXT=thermo
+    command: yarn thermo start
+    volumes:
+      - ./packages/thermo/dist:/app/packages/thermo/dist
+    ports:
+      - 9222:9222
+  heater:
+    container_name: heater
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - BUILD_CONTEXT=heater
+    command: yarn heater start
+    volumes:
+      - ./packages/heater/dist:/app/packages/heater/dist
+    ports:
+      - 9223:9222
+  mosca:
+    image: matteocollina/mosca
+    volumes:
+      - /tmp/mosca:/db
+    ports:
+      - 1883:1883
